@@ -1,0 +1,14 @@
+name: CI using self-hosted runner
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: [self-hosted, hng]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo "Running on self-hosted runner"
